@@ -1,4 +1,5 @@
 class Contact < ActiveRecord::Base
+  belongs_to :user
   def friendly_time
     updated_at.strfttime("%m/%d/%Y")
   end

@@ -1,7 +1,6 @@
 class ContactsController < ApplicationController
-
   def index
-    @contacts = Contact.all
+    @contacts = current_user.contacts
   end
 
   def new
@@ -15,8 +14,9 @@ class ContactsController < ApplicationController
     phone_number: params[:phone_number],
     email: params[:email],
     bio: params[:bio],
-    latitude: coordinates[0],
-    longitude: coordinates[1]
+    user_id: current_user.id
+    #latitude: coordinates[0],
+    #longitude: coordinates[1]
     )
     @contact.save
     render 'new.html.erb'
@@ -24,5 +24,6 @@ class ContactsController < ApplicationController
 
   def show
     @contact = Contact.find_by(id: params[:id])
+    current_user.contacts.include?(contact) ? @contact = contact : nil
   end
 end
