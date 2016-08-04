@@ -1,8 +1,16 @@
+
+
+
+
+<div>
+
 <h1>
-<% @contacts.each do |contact| %>
-  <%= contact.first_name %>
-  <%= contact.last_name %>
-  <%= contact.phone_number %>
-  <%= contact.email %>
-<% end %>
+  <% @contacts.each do |contact| %>
+  <h3><%= link_to "#{contact.first_name} #{contact.last_name}", "/contacts/#{contact.id}"%></h3>
+  <h3><%= contact.phone_number%></h3>
+  <h3><%= contact.email%></h3>
+  
+  <% end %>
 </h1>
+
+</div>

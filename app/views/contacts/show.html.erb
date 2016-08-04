@@ -1,11 +1,16 @@
+
+<div>
+
 <h1>
-  <%= @contact.first_name %>
-  <%= @contact.last_name %>
-  <%= @contact.phone_number%>
-  <%= @contact.email%>
+  <h3><%= @contact.first_name %></h3>
+  <h3><%= @contact.last_name %></h3>
+  <h3><%= @contact.phone_number%></h3>
+  <h3><%= @contact.email%></h3>
+  <h3>Belongs to Groups: </h3>
+  <% @contact.groups.each do |group| %>
+    <%= group.name %>
+    <% end %>
+  <h3><%= @contact.bio%></h3>
 </h1>
 
-
-<h2>Here are all the contacts that are named john:</h2>
-
-<%= Contact.all_john %>
+</div>

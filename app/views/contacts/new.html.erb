@@ -1,29 +1,31 @@
 <h1>Please fill in infomation to create a new contact.</h1>
 
-
+<div>
 <%= form_tag("/contacts", method: "post") do %>
 
-  <%= label_tag(:first_name) %>
-  <%= text_field_tag(:first_name) %>
+  <h3><%= label_tag(:first_name) %>
+  <%= text_field_tag(:first_name) %></h3>
 
-  <%= label_tag(:middle_name) %>
-  <%= text_field_tag(:middle_name) %>
+  <h3><%= label_tag(:middle_name) %>
+  <%= text_field_tag(:middle_name) %></h3>
 
-  <%= label_tag(:last_name) %>
-  <%= text_field_tag(:last_name) %>
+  <h3><%= label_tag(:last_name) %>
+  <%= text_field_tag(:last_name) %></h3>
 
-  <%= label_tag(:phone_number) %>
-  <%= text_field_tag(:phone_number) %>
+  <h3><%= label_tag(:phone_number) %>
+  <%= text_field_tag(:phone_number) %></h3>
 
-  <%= label_tag(:email) %>
-  <%= text_field_tag(:email) %>
+  <h3><%= label_tag(:email) %>
+  <%= text_field_tag(:email) %></h3>
 
-  <%= label_tag(:bio) %>
-  <%= text_field_tag(:bio) %>
+  <h3><%= label_tag(:bio) %>
+  <%= text_field_tag(:bio) %></h3>
 
-  <%= label_tag(:address) %>
-  <%= text_field_tag(:address) %>
+  <h3><%= label_tag(:address) %>
+  <%= text_field_tag(:address) %></h3>
 
 
 <%= submit_tag("Create new contact!") %>
 <% end %>
+
+</div>
