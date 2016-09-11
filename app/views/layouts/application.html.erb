@@ -66,7 +66,16 @@
   </nav>
 
 
+      <% flash.each do |name, msg| -%>
+          <% if msg.class == Array %>
+              <% msg.each do |m| %>
+                  <li><%= m %></li>
+              <% end %>
+        <% else %>
+          <%= msg %>
+        <% end %>
+      <% end %>
 
+      <%= yield %>
 </body>
 </html>
-<%= yield %>

@@ -8,6 +8,7 @@ class ContactsController < ApplicationController
   end
 
   def new
+    @contact = Contact.new
   end
 
   def create
@@ -22,8 +23,12 @@ class ContactsController < ApplicationController
     latitude: coordinates[0],
     longitude: coordinates[1]
     )
-    @contact.save
-    render 'new.html.erb'
+    if @contact.save
+      redirect_to 'new.html.erb'
+    else
+      flash[:warning] = @contact.errors.full_messages
+      render 'new.html.erb'
+    end
   end
 
   def show
